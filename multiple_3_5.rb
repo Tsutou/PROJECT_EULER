@@ -1,4 +1,3 @@
-
 def multiple_3_5
 
   num = 0
