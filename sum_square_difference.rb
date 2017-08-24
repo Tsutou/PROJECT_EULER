@@ -8,6 +8,7 @@ def squaring
     if a == 100
       puts suq
     end
+
   end
 
   return suq;
@@ -24,6 +25,7 @@ def summation
       answer = sum * sum
       puts answer;
     end
+
   end
 
   return answer;
