@@ -15,4 +15,3 @@ def pythagoras
 end
 
 pythagoras
-
