@@ -58,4 +58,3 @@ end
 
 p resultArray.max
 # p resultArray.sort{|a,b|b<=>a}
-
