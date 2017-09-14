@@ -7,4 +7,4 @@ end
 
 #mapに&はプロック→ブロック or ブロック→プロック
 #selectは検索メソッド
-puts (1...10000).map(&:sum_of_divisors).select.with_index(1){|v, i| i != v && i == v.sum_of_divisors}.inject(:+)
+p (1...10000).map(&:sum_of_divisors).select.with_index(1){|v, i| i != v && i == v.sum_of_divisors}.inject(:+)

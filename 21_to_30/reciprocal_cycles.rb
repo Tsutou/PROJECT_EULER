@@ -11,7 +11,7 @@ while i < Math.sqrt(max).to_i + 1 do
     i += prime[(i + 1)..max].index(1) + 1
 end
 
-puts prime.each_index{|i|
+p prime.each_index{|i|
     prime[i] = i unless prime[i].zero?
 }.select{|x| !x.zero?}.map{|x|
     i = 1
