@@ -10,7 +10,7 @@ def power_digit
   return array;
 end
 
-sum = power_digit.inject(:+)
+sum = array.inject(:+)
 
 p sum
 
