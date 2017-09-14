@@ -1,5 +1,5 @@
-numbers =
 
+numbers =
 '
 75
 95 64
@@ -15,31 +15,36 @@ numbers =
 70 11 33 28 77 73 17 78 39 68 17 57
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
-04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
-'
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'
 
-array = Array.new
-dblAry = numbers.split('\n ').map{|n| n.split(' ').map{|n| n.to_i}}
+strAry = numbers.split(" ")
+new_strAry = []
+total = []
 
+num = 0
+for a in 0..14 do
+  ary = []
+  for b in 0..num do
+    #配列の最初の要素を削除
+    n = strAry.shift
+    #末尾にnを追加
+    ary.push(n.to_i)
+  end
+  new_strAry << ary
+  num = num + 1
+end
 
- array << dblAry[0][0..0]
- array << dblAry[0][1..2]
- array << dblAry[0][3..5]
- array << dblAry[0][6..9]
- array << dblAry[0][10..14]
- array << dblAry[0][15..20]
- array << dblAry[0][21..27]
- array << dblAry[0][28..35]
- array << dblAry[0][36..44]
- array << dblAry[0][45..54]
- array << dblAry[0][55..65]
- array << dblAry[0][66..77]
- array << dblAry[0][78..90]
- array << dblAry[0][91..104]
- array << dblAry[0][105..120]
+(1..(new_strAry.size - 1)).each do |i|
+  (0..(new_strAry[i].size - 1)).each do |j|
+    sum_max = 0
+    if j - 1 >= 0
+      sum_max = new_strAry[i - 1][j - 1]
+    end
+    if new_strAry[i - 1].size > j
+      sum_max = [sum_max, new_strAry[i - 1][j]].max
+    end
+    new_strAry[i][j] += sum_max
+  end
+end
 
-
-for n in (0..15)
-  for x in (0..120)
-  range = array[n].length.to_i
-  if array[n][x] == array[n][x +range] || array[n][x +range +1]
+p new_strAry.last.max
